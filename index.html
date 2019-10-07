@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Parallax Effect</title>
+        <link rel="stylesheet" href="./css/parallax.css" />
+    </head>
+    <body>
+        <section class="container">
+            <figure class="iphone-container" id="iphone">
+                <img src="./img/iphone.jpg" alt="" />
+                <div class="shape"></div>
+            </figure>
+        </section>
+    </body>
+    <script>
+        const iphone = document.querySelector('#iphone')
+        const shape = document.querySelector('.shape')
+        window.addEventListener('scroll', function(e) {
+            // console.log(window.scrollY)
+            const position = 54 + window.scrollY
+            shape.style.backgroundPosition = '-' + position + 'px'
+            iphone.style.transform = 'rotate(-' + position * 0.05 + 'deg)'
+        })
+    </script>
+</html>
